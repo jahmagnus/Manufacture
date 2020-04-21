@@ -12,12 +12,14 @@ public class Main {
 
 
     Factory factory = new Factory();
-
     factory.populateMap();
 
-//    factory.printMap();
+        factory.selectKeys("Harri-engine");
 
-    factory.printMapValue("luton");
+
+
+
+
 
 
 

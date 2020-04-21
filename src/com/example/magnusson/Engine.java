@@ -3,12 +3,12 @@ package com.example.magnusson;
 public class Engine {
     private String engineName;
     private String engineConfiguration;
-    private int numOfCylinders;
+    private String numOfCylinders;
     private String forModel;
     private String fuelType;
 
 
-    public Engine(String engineName, String engineConfiguration, int numOfCylinders, String forModel, String fuelType) {
+    public Engine(String engineName, String engineConfiguration, String numOfCylinders, String forModel, String fuelType) {
         this.engineName = engineName;
         this.engineConfiguration = engineConfiguration;
         this.numOfCylinders = numOfCylinders;
@@ -20,7 +20,7 @@ public class Engine {
         return engineConfiguration;
     }
 
-    public int getNumOfCylinders() {
+    public String getNumOfCylinders() {
         return numOfCylinders;
     }
 

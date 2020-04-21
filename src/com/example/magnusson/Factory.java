@@ -18,10 +18,10 @@ public class Factory {
      */
     public void populateMap(){
         Engine engine1 = new Engine("Harris-engine","v-config", "4", "lemon", "petrol");
-        Engine engine2 = new Engine("Carter-engine","boxer", "4", "lemon", "Petrol");
-        Engine engine3 = new Engine("Dimmock-engine","v-config", "8", "Lemon", "diesel");
+        Engine engine2 = new Engine("Carter-engine","boxer", "4", "lemon", "petrol");
+        Engine engine3 = new Engine("Dimmock-engine","v-config", "8", "lemon", "diesel");
         Engine engine4 = new Engine("Anstey-engine","v-config", "4", "clunker", "petrol");
-        Engine engine5 = new Engine("Plunkett-engine","boxer", "4", "clunker", "Petrol");
+        Engine engine5 = new Engine("Plunkett-engine","boxer", "4", "clunker", "petrol");
         Engine engine6 = new Engine("Ludlam-engine","v-config", "8", "clunker", "electric");
 
         Set<Engine>sunderlandFactory = new HashSet<>();
@@ -109,10 +109,9 @@ public class Factory {
      * @param engineName
      * @return
      */
-    public Set selectKeys(String engineName) {
+    public Set<String> selectKeys(String engineName) {
         Set<String> producingFactories = new HashSet<>();
         Set<Engine> engineSet;
-
 
         for (String keyElement : factories.keySet()) {
             engineSet = factories.get(keyElement);
@@ -131,4 +130,26 @@ public class Factory {
             return producingFactories;
         }
     }
+
+    public Set selectValues(String keyToSearch) {
+        Set<Set<Engine>> engines = new HashSet<>();
+
+        for (String keyElement : factories.keySet()){
+            if (keyToSearch.equals(keyElement)){
+                engines.add(factories.get(keyElement));
+            }
+        }
+
+        if (engines.isEmpty()){
+            System.out.println("No engines produced at this factory");
+            return null;
+        }else {
+            System.out.println("All engines produced at " + keyToSearch + "\n" + engines);
+            return engines;
+        }
+    }
+
+
+
+
 }

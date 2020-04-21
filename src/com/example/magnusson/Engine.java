@@ -42,6 +42,7 @@ public class Engine {
                 "Engine configuration: " + getEngineConfiguration() + "\n" +
                 "Cylinders: " + getNumOfCylinders() + "\n" +
                 "Engine for car model: " + getForModel() + "\n" +
-                "Fuel type: " + getFuelType();
+                "Fuel type: " + getFuelType() +
+                "\n===============================";
     }
 }
